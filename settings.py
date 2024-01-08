@@ -18,8 +18,8 @@ class Page:
 menu_background = pygame.image.load(
     r"assets\img\bgcbon.jpg")
 option_background = pygame.image.load(r"assets/img/menu_background.jpg")
-menu_background = pygame.transform.scale(menu_background, (800, 600))
-option_background = pygame.transform.scale(option_background, (800, 600))
+menu_background = pygame.transform.scale(menu_background, (screen_w, screen_h))
+option_background = pygame.transform.scale(option_background, (screen_w, screen_h))
 
 
 # Blit menu_background onto the transparent surface (with the drop shadow)
@@ -107,23 +107,23 @@ player_vs_AI_button_rect = player_vs_AI_button.get_rect(
     center=(screen_w / 2, 425))
 # player_vs_player_button_rect = player_vs_AI_button.get_rect(center=(screen_w /2, 425))
 
-easy_btn = pygame.image.load(r"assets\img\easy.png")
-easy_btn = pygame.transform.scale(easy_btn, (200, 60))
+easy_btn = pygame.image.load(r"assets\img\button_easy_1.png")
+easy_btn = pygame.transform.scale(easy_btn, (126, 64))
 
-med_btn = pygame.image.load(r"assets\img\medium.png")
-med_btn = pygame.transform.scale(med_btn, (200, 60))
+med_btn = pygame.image.load(r"assets\img\button_medium_1.png")
+med_btn = pygame.transform.scale(med_btn, (126, 64))
 
-hard_btn = pygame.image.load(r"assets\img\hard.png")
-hard_btn = pygame.transform.scale(hard_btn, (200, 60))
+hard_btn = pygame.image.load(r"assets\img\button_hard_1.png")
+hard_btn = pygame.transform.scale(hard_btn, (126, 64))
 
 diff_arr = [easy_btn, med_btn, hard_btn]
 
-diff_btn_rect = option_button.get_rect(
-    topleft=(screen_w // 2 - hard_btn.get_width() // 2, 200)
+diff_btn_rect = easy_btn.get_rect(
+    topleft=(screen_w // 2-66 , 200)
 )
 
 explain_button = pygame.transform.scale(
-    pygame.image.load("assets/img/explanation.png"), (50, 50))
+    pygame.image.load(r"assets\img\buttong.png"), (50, 53))
 hint_button = pygame.transform.scale(
     pygame.image.load("assets\img\hint_btn.png"), (50, 50))
 explain_button_rect = explain_button.get_rect(topleft=(screen_w - 60, 10))
