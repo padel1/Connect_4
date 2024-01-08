@@ -76,7 +76,7 @@ class Stage:
             )
             self.screen.blit(
                 bp_clicked_surface,
-                (screen_w // 2 + bp_clicked_surface.get_width() // 2+100, screen_h // 2),
+                (screen_w // 2 + bp_clicked_surface.get_width() // 2+100, screen_h // 2)
             )
         
         self.screen.blit(diff_arr[self.diff_idx], diff_btn_rect)

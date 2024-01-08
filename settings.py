@@ -42,8 +42,8 @@ wp_surface = pygame.image.load("assets/img/menu white piece.png")
 wp_surface = pygame.transform.smoothscale(wp_surface, (50, 50))
 
 wp_surface_rect = wp_surface.get_rect(
-    topleft=(screen_w // 2 - wp_surface.get_width()+50, screen_h // 2)
-)
+    topleft=(screen_w // 2 -
+                             wp_surface.get_width() +70, screen_h // 2))
 
 
 wp_clicked_surface = pygame.image.load(
@@ -57,7 +57,7 @@ bp_clicked_surface = pygame.image.load(
     "assets/img/menu black piece(clicked).png")
 bp_clicked_surface = pygame.transform.smoothscale(bp_clicked_surface, (50, 50))
 bp_surface_rect = wp_surface.get_rect(
-    topleft=(screen_w // 2 + bp_surface.get_width()+50 // 2, screen_h // 2)
+    topleft=(screen_w // 2 + bp_clicked_surface.get_width() // 2+100, screen_h // 2)
 )
 
 
