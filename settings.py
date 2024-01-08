@@ -100,9 +100,9 @@ help_button_rect = help_button.get_rect(
 
 
 player_vs_AI_button = pygame.transform.scale(
-    pygame.image.load("assets\img\pvi.png"), (100, 100))
+    pygame.image.load(r"assets\img\button_p-vs-ai.png"), (130, 53))
 player_vs_player_button = pygame.transform.scale(
-    pygame.image.load("assets\img\pvp.png"), (100, 100))
+    pygame.image.load(r"assets\img\button_p-vs-p.png"), (130, 53))
 player_vs_AI_button_rect = player_vs_AI_button.get_rect(
     center=(screen_w / 2, 425))
 # player_vs_player_button_rect = player_vs_AI_button.get_rect(center=(screen_w /2, 425))
