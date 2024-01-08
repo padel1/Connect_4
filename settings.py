@@ -7,7 +7,8 @@ pygame.init()
 pygame.font.init()
 
 FPS = 60
-
+font = pygame.font.SysFont(None, 36)
+font2 = pygame.font.SysFont(None, 80)
 
 class Page:
     menu = "menu"
@@ -41,7 +42,7 @@ wp_surface = pygame.image.load("assets/img/menu white piece.png")
 wp_surface = pygame.transform.smoothscale(wp_surface, (50, 50))
 
 wp_surface_rect = wp_surface.get_rect(
-    topleft=(screen_w // 2 - wp_surface.get_width(), screen_h // 2)
+    topleft=(screen_w // 2 - wp_surface.get_width()+50, screen_h // 2)
 )
 
 
@@ -56,7 +57,7 @@ bp_clicked_surface = pygame.image.load(
     "assets/img/menu black piece(clicked).png")
 bp_clicked_surface = pygame.transform.smoothscale(bp_clicked_surface, (50, 50))
 bp_surface_rect = wp_surface.get_rect(
-    topleft=(screen_w // 2 + bp_surface.get_width() // 2, screen_h // 2)
+    topleft=(screen_w // 2 + bp_surface.get_width()+50 // 2, screen_h // 2)
 )
 
 
@@ -104,7 +105,7 @@ player_vs_AI_button = pygame.transform.scale(
 player_vs_player_button = pygame.transform.scale(
     pygame.image.load(r"assets\img\button_p-vs-p.png"), (130, 53))
 player_vs_AI_button_rect = player_vs_AI_button.get_rect(
-    center=(screen_w / 2, 425))
+    center=(screen_w / 2+100, 425))
 # player_vs_player_button_rect = player_vs_AI_button.get_rect(center=(screen_w /2, 425))
 
 easy_btn = pygame.image.load(r"assets\img\button_easy_1.png")
@@ -119,7 +120,7 @@ hard_btn = pygame.transform.scale(hard_btn, (126, 64))
 diff_arr = [easy_btn, med_btn, hard_btn]
 
 diff_btn_rect = easy_btn.get_rect(
-    topleft=(screen_w // 2-66 , 200)
+    topleft=(screen_w // 2+34 , 200)
 )
 
 explain_button = pygame.transform.scale(
@@ -128,3 +129,26 @@ hint_button = pygame.transform.scale(
     pygame.image.load("assets\img\hint_btn.png"), (50, 50))
 explain_button_rect = explain_button.get_rect(topleft=(screen_w - 60, 10))
 hint_button_rect = hint_button.get_rect(topleft=(screen_w - 60, 80))
+
+
+# text 
+# levels
+level_text = "LEVEL :"
+levels_text_surface = font.render(level_text, True, (0, 0, 0))
+levels_text_rect = levels_text_surface.get_rect(
+center=(screen_w // 2-150, screen_h // 2-70))
+# pieces
+level_text = "PLAYER SELECT :"
+pieces_text_surface = font.render(level_text, True, (0, 0, 0))
+pieces_text_rect = pieces_text_surface.get_rect(
+center=(screen_w // 2-150, screen_h // 2+22))
+# MODE
+level_text = "PLAY MODE :"
+MODE_text_surface = font.render(level_text, True, (0, 0, 0))
+MODE_text_rect = MODE_text_surface.get_rect(
+center=(screen_w // 2-150, screen_h // 2+123))
+# settings
+settings_text = "SETTINGS"
+settings_text_surface = font2.render(settings_text, True, (0, 0, 0))
+settings_text_rect = settings_text_surface.get_rect(
+center=(screen_w // 2, 50))

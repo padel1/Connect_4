@@ -2,9 +2,9 @@ from settings import *
 import pygame
 from game import Game
 from drawable import *
-
-
+font = pygame.font.SysFont(None, 36)
 class Stage:
+
     def __init__(self, screen, game) -> None:
         self.stage = "menu"
         self.screen = screen
@@ -41,7 +41,8 @@ class Stage:
         self.screen.blit(help_button, help_button_rect)
 
     def option_page(self):
-        
+
+
         transparent = pygame.Surface((800, 600), pygame.SRCALPHA)
 
         shadow_color = (0, 0, 0, 180)
@@ -53,37 +54,41 @@ class Stage:
         if self.choosed_piece == 0:
             self.screen.blit(
                 wp_surface, (screen_w // 2 -
-                             wp_surface.get_width() - 30, screen_h // 2)
+                             wp_surface.get_width() + 70, screen_h // 2)
             )
             self.screen.blit(
                 bp_surface, (screen_w // 2 +
-                             bp_surface.get_width() // 2, screen_h // 2)
+                             bp_surface.get_width() // 2+100, screen_h // 2)
             )
         if self.choosed_piece == 1:
             self.screen.blit(
                 wp_clicked_surface,
-                (screen_w // 2 - wp_clicked_surface.get_width() - 30, screen_h // 2),
+                (screen_w // 2 - wp_clicked_surface.get_width() +70, screen_h // 2),
             )
             self.screen.blit(
                 bp_surface, (screen_w // 2 +
-                             bp_surface.get_width() // 2, screen_h // 2)
+                             bp_surface.get_width() // 2+100, screen_h // 2)
             )
         if self.choosed_piece == 2:
             self.screen.blit(
                 wp_surface, (screen_w // 2 -
-                             wp_surface.get_width() - 30, screen_h // 2)
+                             wp_surface.get_width() +70, screen_h // 2)
             )
             self.screen.blit(
                 bp_clicked_surface,
-                (screen_w // 2 + bp_clicked_surface.get_width() // 2, screen_h // 2),
+                (screen_w // 2 + bp_clicked_surface.get_width() // 2+100, screen_h // 2),
             )
+        
         self.screen.blit(diff_arr[self.diff_idx], diff_btn_rect)
 
         if self.game_mode == "player_vs_player":
             self.screen.blit(player_vs_player_button, player_vs_AI_button_rect)
         else:
             self.screen.blit(player_vs_AI_button, player_vs_AI_button_rect)
-
+        self.screen.blit(levels_text_surface, levels_text_rect)
+        self.screen.blit(pieces_text_surface, pieces_text_rect)
+        self.screen.blit(MODE_text_surface, MODE_text_rect)
+        self.screen.blit(settings_text_surface, settings_text_rect)
     def game_page(self):
         self.screen.blit(game_background, (0, 0))
         draw_board(

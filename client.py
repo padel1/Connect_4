@@ -29,7 +29,7 @@ def display_win_dialog(screen, clock, game, stage, page):
         win_text = "Player {} wins!".format(game.check_for_win(game.board))
         text_surface = font.render(win_text, True, (0, 0, 0))
         text_rect = text_surface.get_rect(
-            center=(screen_w // 2, screen_h // 2))
+        center=(screen_w // 2, screen_h // 2))
         screen.blit(text_surface, text_rect)
 
         pygame.display.flip()
