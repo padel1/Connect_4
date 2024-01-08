@@ -124,7 +124,7 @@ class Game:
             opp_piece = 2
 
         if window.count(piece) == 4:
-            score += 100
+            score += 10000
         elif window.count(piece) == 3 and window.count(0) == 1:
             score += 5
         elif window.count(piece) == 2 and window.count(0) == 2:
